@@ -30,25 +30,40 @@
   src: url('assets/fonts/DegularDemo-Semibold.otf');
   font-weight: 600;
 }
+body {
+  background-color: #f5f2eb;
+}
 
 .container {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .login__container {
-  padding-top: 4rem;
+  outline: 2px solid red;
   display: grid;
-  column-gap: 3rem;
+  column-gap: 2rem;
+  justify-items: center;
+  justify-content: center;
 }
 /*LOGIN */
 .login__img {
   display: none;
 }
+
 .login__form {
+
   display: grid;
-  padding: 4rem 1.8rem;
+  padding: 2rem 2rem;
   justify-items: center;
   font-family: 'DegularDemo', Courier, monospace;
+  transition: 0.5s ease;
+  background-color: #ffffff;
+  margin: 0 auto;
+  border-radius: 30px;
 }
 .login__title {
   font-size: 2.4rem;
@@ -105,26 +120,37 @@
   flex-direction: column;
   width: 100%;
   row-gap: 9px;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
 }
 .login__social {
   border: 1px solid black;
   display: flex;
-  padding: 0.6rem 7.1rem;
   border-radius: 40px;
-  justify-content: center;
+
   align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
 }
-.login__social-img {
-  width: auto;
-  height: 1.2rem;
-}
-.login__register-message--footer{
+
+.login__register-message--footer {
   justify-self: center;
   font-size: 0.9rem;
   font-weight: 400;
   color: #000000;
 }
-.login__register-message--footer span{
+.login__register-message--footer span {
   font-weight: 700;
+}
+
+@media screen and (min-width: 1100px) {
+  .login__img {
+    display: inline;
+  }
+  .login__container {
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+  }
+  .login__form {
+    max-width: 450px;
+  }
 }
